@@ -19,7 +19,7 @@ resource "oci_core_instance" "AbdelBassetWebserver2" {
 }
 
 data "oci_core_vnic_attachments" "AbdelBassetWebserver2_VNIC1_attach" {
-  availability_domain = lookup(data.oci_identity_availability_domains.ADs.availability_domains[2], "name")
+  availability_domain = lookup(data.oci_identity_availability_domains.ADs.availability_domains[0], "name")
   compartment_id = var.compartment_ocid
   instance_id = oci_core_instance.AbdelBassetWebserver2.id
 }
